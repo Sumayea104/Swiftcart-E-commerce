@@ -24,9 +24,115 @@
   </head>
   <body class="bg-gray-100">
     <header>
-      
+      <!-- Navbar starts -->
+      <nav
+        class="bg-white shadow-md px-6 py-4 flex items-center justify-between"
+      >
+        <!-- Logo -->
+        <div class="text-3xl font-extrabold text-indigo-600 tracking-wide">
+          SwiftCart
+        </div>
+        <!-- Desktop Menu -->
+        <ul class="hidden md:flex space-x-12 text-gray-700 font-medium text-lg">
+          <li>
+            <a href="#" class="hover:text-indigo-600 transition duration-200"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a href="#" class="hover:text-indigo-600 transition duration-200"
+              >Products</a
+            >
+          </li>
+          <li>
+            <a href="#" class="hover:text-indigo-600 transition duration-200"
+              >About</a
+            >
+          </li>
+          <li>
+            <a href="#" class="hover:text-indigo-600 transition duration-200"
+              >Contact</a
+            >
+          </li>
+        </ul>
+
+        <!-- Right Side -->
+        <div class="flex items-center space-x-4">
+          <!-- Cart -->
+          <div class="relative">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-7 w-7 text-indigo-600 hover:text-indigo-500 transition"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.293 2.293a1 1 0 00.707 1.707h11.172a1 1 0 00.707-1.707L17 13M7 13v6M17 13v6"
+              />
+            </svg>
+            <span
+              id="cartCount"
+              class="absolute -top-2 -right-2 bg-red-500 text-white rounded-full px-1 text-xs font-bold"
+              ></span
+            >
+          </div>
+
+          <!-- Hamburger Menu (Mobile) -->
+          <div class="md:hidden">
+            <button id="menuBtn" class="focus:outline-none">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-7 w-7 text-gray-800 hover:text-indigo-600 transition"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Mobile Dropdown -->
+      <ul
+        id="mobileMenu"
+        class="hidden bg-white shadow-md md:hidden flex flex-col space-y-3 px-6 py-4 text-gray-700 font-medium"
+      >
+        <li>
+          <a href="#" class="hover:text-indigo-600 transition duration-200"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a href="#" class="hover:text-indigo-600 transition duration-200"
+            >Products</a
+          >
+        </li>
+        <li>
+          <a href="#" class="hover:text-indigo-600 transition duration-200"
+            >About</a
+          >
+        </li>
+        <li>
+          <a href="#" class="hover:text-indigo-600 transition duration-200"
+            >Contact</a
+          >
+        </li>
+      </ul>
+      <!-- Navbar ends -->
     </header>
     <body>
+        
       <script src="script.js"></script>
     </body>
     <footer></footer>
