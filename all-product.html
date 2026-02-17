@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./styles/styles.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/styles.css" />
 
     <!-- Google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -21,134 +21,204 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>All Product page</title>
-</head>
-<body class="bg-gray-50 font-sans">
+  </head>
+  <body class="bg-white">
+    <!-- Navbar starts -->
+    <nav class="bg-white border-b border-gray-100 shadow-sm sticky top-0 z-[100]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 md:h-20">
+      
+      <div class="text-2xl font-black text-indigo-600">SwiftCart</div>
 
-  <!-- Navbar -->
-  <nav class="navbar bg-white border-b border-gray-100 shadow-md">
-        <div class="nav-container max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <div
-            class=" md:grid md:grid-cols-3 items-center"
-          >
-            <!-- Logo -->
-            <div class="text-2xl font-extrabold text-indigo-600">SwiftCart</div>
-            <!-- Desktop Menu -->
-            <ul class="hidden md:flex space-x-8">
-              <li>
-                <a
-                  href="index.html"
-                  class="hover:text-indigo-600 transition duration-200"
-                  >Home</a
-                >
-              </li>
-              <li>
-                <a
-                  href="all-product.html"
-                  class="hover:text-indigo-600 transition duration-200"
-                  >Products</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="hover:text-indigo-600 transition duration-200"
-                  >About</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="hover:text-indigo-600 transition duration-200"
-                  >Contact</a
-                >
-              </li>
-            </ul>
+      <ul class="hidden md:flex items-center space-x-10 text-gray-600 font-semibold">
+        <li><a href="index.html" class="hover:text-indigo-600 transition">Home</a></li>
+        <li><a href="all-product.html" class="text-indigo-600">Products</a></li>
+        <li><a href="#" class="hover:text-indigo-600 transition">About</a></li>
+        <li><a href="#" class="hover:text-indigo-600 transition">Contact</a></li>
+      </ul>
 
-            <!-- Right Side -->
-            <div class="flex justify-end items-center gap-4">
-              <!-- Cart -->
-              <div class="relative">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-7 w-7 text-indigo-600 hover:text-indigo-500 transition"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.293 2.293a1 1 0 00.707 1.707h11.172a1 1 0 00.707-1.707L17 13M7 13v6M17 13v6"
-                  />
-                </svg>
-                <span
-                  id="cartCount"
-                  class="absolute -top-2 -right-2 bg-red-500 text-white rounded-full px-1 text-xs font-bold"
-                ></span>
-              </div>
+      <div class="flex items-center space-x-3 md:space-x-5">
+        <button onclick="toggleCart()" class="relative p-2 text-gray-700 hover:text-indigo-600 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+          </svg>
+          <span id="cartCount" class="absolute top-0 right-0 bg-red-600 text-white text-[10px] font-bold h-5 w-5 flex items-center justify-center rounded-full ring-2 ring-white">0</span>
+        </button>
 
-              <!-- Hamburger Menu (Mobile) -->
-              <div class="md:hidden">
-                <button id="menuBtn" class="focus:outline-none">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-7 w-7 text-gray-800 hover:text-indigo-600 transition"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M4 6h16M4 12h16M4 18h16"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
-
-  <!-- Page Header -->
-  <section class="bg-gray-100 py-10">
-    <div class="max-w-7xl mx-auto px-6 md:px-12 text-left">
-      <h1 class="text-4xl font-bold text-gray-800">Our Products</h1>
-      <p class="mt-2 text-gray-600">Browse our wide range of products by category</p>
-    </div>
-  </section>
-
-  <!-- Category Buttons -->
-  <section class="max-w-7xl mx-auto px-6 md:px-12 mt-6">
-    <div class="flex flex-wrap gap-4 justify-start" id="categoryButtons"></div>
-  </section>
-
-  <!-- Products Grid -->
-  <section class="max-w-7xl mx-auto px-6 md:px-12 mt-8">
-    <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8"></div>
-  </section>
-
-  <!-- Product Modal -->
-  <div id="productModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
-    <div class="bg-white rounded-lg shadow-lg max-w-lg w-full mx-4 md:mx-0 p-6 relative">
-      <button id="modalClose" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
-      <img id="modalImage" src="" alt="Product" class="h-64 w-full object-cover rounded">
-      <h3 id="modalTitle" class="text-xl font-bold mt-4 text-gray-800"></h3>
-      <p id="modalCategory" class="text-gray-500 mt-1 capitalize"></p>
-      <p id="modalPrice" class="text-indigo-600 font-bold mt-2"></p>
-      <div id="modalRating" class="mt-2 flex items-center space-x-1"></div>
-      <p id="modalDescription" class="mt-4 text-gray-600 text-sm"></p>
-      <div class="mt-6 flex gap-4">
-        <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded transition add-cart-btn">Add to Cart</button>
-        <button class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded transition">Buy Now</button>
+        <button id="menuBtn" class="md:hidden p-2 text-gray-700 focus:outline-none">
+          <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
       </div>
     </div>
   </div>
 
-  <!-- Footer -->
-  <footer
+  <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-50 shadow-lg">
+    <ul class="flex flex-col p-5 space-y-4 font-bold text-gray-600">
+      <li><a href="index.html" class="block hover:text-indigo-600">Home</a></li>
+      <li><a href="all-product.html" class="block text-indigo-600">Products</a></li>
+      <li><a href="#" class="block hover:text-indigo-600">About</a></li>
+      <li><a href="#" class="block hover:text-indigo-600">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+    <!-- Mobile Dropdown -->
+    <ul
+      id="mobileMenu"
+      class="hidden bg-white shadow-md md:hidden flex flex-col space-y-3 px-6 py-4 text-gray-700 font-medium"
+    >
+      <li>
+        <a href="#" class="hover:text-indigo-600 transition duration-200"
+          >Home</a
+        >
+      </li>
+      <li>
+        <a href="#" class="hover:text-indigo-600 transition duration-200"
+          >Products</a
+        >
+      </li>
+      <li>
+        <a href="#" class="hover:text-indigo-600 transition duration-200"
+          >About</a
+        >
+      </li>
+      <li>
+        <a href="#" class="hover:text-indigo-600 transition duration-200"
+          >Contact</a
+        >
+      </li>
+    </ul>
+    <!-- Navbar ends -->
+    <div
+      id="spinner"
+      class="fixed inset-0 bg-white/80 z-[60] flex flex-col items-center justify-center backdrop-blur-sm"
+    >
+      <div
+        class="w-12 h-12 border-4 border-gray-200 border-t-indigo-600 rounded-full animate-spin"
+      ></div>
+      <p class="mt-4 text-sm font-bold text-indigo-600 animate-pulse">
+        Loading SwiftCart...
+      </p>
+    </div>
+
+    <main class="max-w-7xl mx-auto px-4 md:px-[120px] py-16">
+      <h2 class="text-3xl font-bold text-center mb-10 text-gray-900">
+        Our Products
+      </h2>
+
+      <div class="max-w-md mx-auto mb-10">
+        <input
+          type="text"
+          id="productSearch"
+          onkeyup="searchProducts()"
+          placeholder="Search products..."
+          class="w-full px-6 py-3 border border-gray-200 rounded-xl outline-none focus:border-indigo-600 transition shadow-sm"
+        />
+      </div>
+
+      <div
+        id="category-filters"
+        class="flex flex-wrap justify-center gap-3 mb-12"
+      >
+        <button
+          onclick="filterProducts('all', this)"
+          class="filter-btn px-6 py-2 rounded-full text-sm font-medium bg-indigo-600 text-white shadow-md transition-all"
+        >
+          All
+        </button>
+        <button
+          onclick="filterProducts('electronics', this)"
+          class="filter-btn px-6 py-2 rounded-full text-sm font-medium bg-white text-gray-500 border border-gray-100 transition-all hover:bg-gray-50"
+        >
+          Electronics
+        </button>
+        <button
+          onclick="filterProducts('jewelery', this)"
+          class="filter-btn px-6 py-2 rounded-full text-sm font-medium bg-white text-gray-500 border border-gray-100 transition-all hover:bg-gray-50"
+        >
+          Jewelery
+        </button>
+        <button
+          onclick="filterProducts('men\'s clothing', this)"
+          class="filter-btn px-6 py-2 rounded-full text-sm font-medium bg-white text-gray-500 border border-gray-100 transition-all hover:bg-gray-50"
+        >
+          Men's Clothing
+        </button>
+        <button
+          onclick="filterProducts('women\'s clothing', this)"
+          class="filter-btn px-6 py-2 rounded-full text-sm font-medium bg-white text-gray-500 border border-gray-100 transition-all hover:bg-gray-50"
+        >
+          Women's Clothing
+        </button>
+      </div>
+
+      <div
+        id="product-grid"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10 opacity-0 transition-opacity duration-500"
+      ></div>
+    </main>
+
+    <div
+      id="productModal"
+      class="fixed inset-0 bg-black/60 hidden z-[100] flex items-center justify-center p-4 backdrop-blur-md"
+    >
+      <div
+        class="bg-white rounded-[2rem] max-w-3xl w-full max-h-[90vh] overflow-y-auto relative p-8 md:p-12 shadow-2xl"
+      >
+        <button
+          onclick="closeModal()"
+          class="absolute top-6 right-6 text-3xl text-gray-400 hover:text-gray-900"
+        >
+          &times;
+        </button>
+        <div id="modalContent"></div>
+      </div>
+    </div>
+
+    <div
+      id="cartOverlay"
+      onclick="toggleCart()"
+      class="fixed inset-0 bg-black/40 z-[150] hidden backdrop-blur-sm"
+    ></div>
+
+    <div
+      id="cartSidebar"
+      class="fixed inset-y-0 right-0 w-full max-w-sm bg-white z-[200] shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col"
+    >
+      <div class="p-6 border-b flex justify-between items-center bg-gray-50">
+        <h2 class="text-xl font-bold">Shopping Cart</h2>
+        <button
+          onclick="toggleCart()"
+          class="p-2 hover:bg-gray-200 rounded-full"
+        >
+          &times;
+        </button>
+      </div>
+      <div
+        id="cartItemsList"
+        class="flex-1 overflow-y-auto p-6 space-y-6"
+      ></div>
+      <div class="p-6 border-t bg-white">
+        <div class="flex justify-between items-center mb-6">
+          <span
+            class="text-gray-500 font-bold uppercase text-[10px] tracking-widest"
+            >Total</span
+          >
+          <span id="cartTotalPrice" class="text-2xl font-black text-gray-900"
+            >$0.00</span
+          >
+        </div>
+        <button
+          class="w-full bg-indigo-600 text-white py-4 rounded-xl font-bold hover:bg-indigo-700 transition-all"
+        >
+          Checkout
+        </button>
+      </div>
+    </div>
+    <!-- all products section end -->
+    <footer
       class="bg-[#111827] text-white pt-[80px] pb-[40px] font-['Inter',sans-serif]"
     >
       <div class="max-w-7xl mx-auto px-4 md:px-[120px]">
@@ -318,7 +388,7 @@
         </div>
       </div>
     </footer>
-
-  <script src="all-products.js"></script>
-</body>
+    <script src="all-product.js"></script>
+    
+  </body>
 </html>

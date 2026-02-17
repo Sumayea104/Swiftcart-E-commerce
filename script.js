@@ -1,22 +1,11 @@
 
-  const menuBtn = document.getElementById("menuBtn");
-  const mobileMenu = document.getElementById("mobileMenu");
+  const menuBtn = document.getElementById('menuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
 
-  menuBtn.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
-  });
-
-  const fetchProducts = async () => {
-  const response = await fetch('https://fakestoreapi.com/products?limit=3');
-  const products = await response.json();
-  
-  const container = document.getElementById('product-container');
-  // container.innerHTML = ''; // Clear previous data
-  
-  products.forEach(product => {
-    // Ekhane uporer HTML structure ta loop hobe
-  });
-}
+menuBtn.addEventListener('click', () => {
+    // Toggle hidden class to show/hide menu
+    mobileMenu.classList.toggle('hidden');
+});
 
 async function loadTrendingProducts() {
   const container = document.getElementById("trending-container");

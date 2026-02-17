@@ -25,119 +25,45 @@
   <body class="bg-gray-100">
     <header>
       <!-- Navbar starts -->
-      <nav class="navbar bg-white border-b border-gray-100 shadow-md">
-        <div
-          class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between"
-        >
-          <div class="md:grid md:grid-cols-3 items-center">
-            <!-- Logo -->
-            <div class="text-2xl font-extrabold text-indigo-600">SwiftCart</div>
-            <!-- Desktop Menu -->
-            <ul class="hidden md:flex space-x-8">
-              <li>
-                <a
-                  href="index.html"
-                  class="hover:text-indigo-600 transition duration-200"
-                  >Home</a
-                >
-              </li>
-              <li>
-                <a
-                  href="all-product.html"
-                  class="hover:text-indigo-600 transition duration-200"
-                  >Products</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="hover:text-indigo-600 transition duration-200"
-                  >About</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="hover:text-indigo-600 transition duration-200"
-                  >Contact</a
-                >
-              </li>
-            </ul>
+      <nav class="bg-white border-b border-gray-100 shadow-sm sticky top-0 z-[100]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      
+      <div class="text-2xl font-black text-indigo-600">SwiftCart</div>
 
-            <!-- Right Side -->
-            <div class="flex justify-end items-center gap-4">
-              <!-- Cart -->
-              <div class="relative">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-7 w-7 text-indigo-600 hover:text-indigo-500 transition"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.293 2.293a1 1 0 00.707 1.707h11.172a1 1 0 00.707-1.707L17 13M7 13v6M17 13v6"
-                  />
-                </svg>
-                <span
-                  id="cartCount"
-                  class="absolute -top-2 -right-2 bg-red-500 text-white rounded-full px-1 text-xs font-bold"
-                ></span>
-              </div>
-
-              <!-- Hamburger Menu (Mobile) -->
-              <div class="md:hidden">
-                <button id="menuBtn" class="focus:outline-none">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-7 w-7 text-gray-800 hover:text-indigo-600 transition"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M4 6h16M4 12h16M4 18h16"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
-
-      <!-- Mobile Dropdown -->
-      <ul
-        id="mobileMenu"
-        class="hidden bg-white shadow-md md:hidden flex flex-col space-y-3 px-6 py-4 text-gray-700 font-medium"
-      >
-        <li>
-          <a href="#" class="hover:text-indigo-600 transition duration-200"
-            >Home</a
-          >
-        </li>
-        <li>
-          <a href="#" class="hover:text-indigo-600 transition duration-200"
-            >Products</a
-          >
-        </li>
-        <li>
-          <a href="#" class="hover:text-indigo-600 transition duration-200"
-            >About</a
-          >
-        </li>
-        <li>
-          <a href="#" class="hover:text-indigo-600 transition duration-200"
-            >Contact</a
-          >
-        </li>
+      <ul class="hidden md:flex items-center space-x-10 text-gray-600 font-semibold">
+        <li><a href="index.html" class="hover:text-indigo-600 transition">Home</a></li>
+        <li><a href="all-product.html" class="text-indigo-600">Products</a></li>
+        <li><a href="#" class="hover:text-indigo-600 transition">About</a></li>
+        <li><a href="#" class="hover:text-indigo-600 transition">Contact</a></li>
       </ul>
+
+      <div class="flex items-center space-x-5">
+        <button onclick="toggleCart()" class="relative p-2 text-gray-700 hover:text-indigo-600 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+          </svg>
+          <span id="cartCount" class="absolute top-0 right-0 bg-red-500 text-white text-[10px] font-bold h-5 w-5 flex items-center justify-center rounded-full hidden">0</span>
+        </button>
+
+        <button id="menuBtn" class="md:hidden p-2 text-gray-700">
+          <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-50">
+    <ul class="flex flex-col p-5 space-y-4 font-bold text-gray-600">
+      <li><a href="index.html" class="block py-2 hover:text-indigo-600">Home</a></li>
+      <li><a href="all-product.html" class="block py-2 text-indigo-600">Products</a></li>
+      <li><a href="#" class="block py-2 hover:text-indigo-600">About</a></li>
+      <li><a href="#" class="block py-2 hover:text-indigo-600">Contact</a></li>
+    </ul>
+  </div>
+</nav>
       <!-- Navbar ends -->
     </header>
     <body>
