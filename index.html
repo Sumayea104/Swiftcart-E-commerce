@@ -25,15 +25,14 @@
   <body class="bg-gray-100">
     <header>
       <!-- Navbar starts -->
-      <nav class="bg-white border-b border-gray-100 shadow-sm sticky top-0 z-[100]">
+      <nav class="bg-white border-b border-gray-100 lg:px-40 shadow-sm sticky top-0 z-[100]">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-20">
-      
       <div class="text-2xl font-black text-indigo-600">SwiftCart</div>
-
+      
       <ul class="hidden md:flex items-center space-x-10 text-gray-600 font-semibold">
-        <li><a href="index.html" class="hover:text-indigo-600 transition">Home</a></li>
-        <li><a href="all-product.html" class="text-indigo-600">Products</a></li>
+        <li><a href="index.html" class="text-indigo-600">Home</a></li>
+        <li><a href="all-product.html" class="hover:text-indigo-600 transition">Products</a></li>
         <li><a href="#" class="hover:text-indigo-600 transition">About</a></li>
         <li><a href="#" class="hover:text-indigo-600 transition">Contact</a></li>
       </ul>
@@ -45,255 +44,130 @@
           </svg>
           <span id="cartCount" class="absolute top-0 right-0 bg-red-500 text-white text-[10px] font-bold h-5 w-5 flex items-center justify-center rounded-full hidden">0</span>
         </button>
-
         <button id="menuBtn" class="md:hidden p-2 text-gray-700">
-          <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
+          <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
         </button>
       </div>
     </div>
   </div>
-
   <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-50">
     <ul class="flex flex-col p-5 space-y-4 font-bold text-gray-600">
-      <li><a href="index.html" class="block py-2 hover:text-indigo-600">Home</a></li>
-      <li><a href="all-product.html" class="block py-2 text-indigo-600">Products</a></li>
-      <li><a href="#" class="block py-2 hover:text-indigo-600">About</a></li>
-      <li><a href="#" class="block py-2 hover:text-indigo-600">Contact</a></li>
+      <li><a href="index.html" class="text-indigo-600">Home</a></li>
+      <li><a href="all-product.html">Products</a></li>
     </ul>
   </div>
 </nav>
-      <!-- Navbar ends -->
-    </header>
-    <body>
-      <!-- bannar/ hero section starts -->
-      <section
-        class="relative bg-gray-900 h-[300px] md:h-[500px] flex items-center bg-cover bg-center"
-        style="background-image: url(&quot;./Assets/banner-image.png&quot;)"
-      >
-        <!-- Gradient Overlay -->
 
-        <div
-          class="absolute inset-0 bg-gradient-to-r from-[#1F2937]/95 via-[#1F2937]/40 to-transparent"
-        ></div>
-        <!-- Content -->
-        <div
-          class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-40 py-4 relative z-10"
-        >
-          <div class="max-w-xl lg:max-w-3xl text-center md:text-left">
-            <h1
-              class="text-white text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight"
-            >
-              Best Collection For You
-            </h1>
-            <p class="text-sm md:text-2xl text-gray-200 mb-6">
-              Discover the latest trends in fashion, electronics, and more
-            </p>
-            <button class="btn btn-primary px-6 py-2 text-base">
-              Shop Now
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <!-- bannar/ hero section ends -->
-
-      <!-- why chose us/ features section starts -->
-      <section class="w-full bg-white py-20">
-        <div class="mx-auto max-w-7xl px-4 md:px-40 text-center">
-          <!-- Heading centered -->
-          <h2 class="text-3xl md:text-4xl font-bold text-gray-800">
-            Why Choose Us
-          </h2>
-          <p class="mt-2 text-gray-600 text-sm md:text-base">
-            Fast, secure, and reliable shopping experience for you.
-          </p>
-
-          <!-- Features grid -->
-          <div
-            class="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8"
-          >
-            <!-- Card 1 -->
-            <div class="relative bg-white rounded-lg shadow p-6 pt-12">
-              <!-- Icon box half-over top -->
-              <div
-                class="absolute -top-6 left-6 bg-indigo-100 w-12 h-12 flex items-center justify-center rounded-sm"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6 text-indigo-600"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M3 3h18v18H3V3z"
-                  />
-                </svg>
-              </div>
-              <!-- Text -->
-              <h3 class="text-lg font-semibold text-gray-800 mt-2">
-                Fast Delivery
-              </h3>
-              <p class="mt-1 text-gray-600 text-sm">
-                Get your products delivered quickly and safely.
-              </p>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="relative bg-white rounded-lg shadow p-6 pt-12">
-              <div
-                class="absolute -top-6 left-6 bg-green-100 w-12 h-12 flex items-center justify-center rounded-sm"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6 text-green-600"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M12 8v4l3 3"
-                  />
-                </svg>
-              </div>
-              <h3 class="text-lg font-semibold text-gray-800 mt-2">
-                24/7 Support
-              </h3>
-              <p class="mt-1 text-gray-600 text-sm">
-                Our team is available around the clock.
-              </p>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="relative bg-white rounded-lg shadow p-6 pt-12">
-              <div
-                class="absolute -top-6 left-6 bg-yellow-100 w-12 h-12 flex items-center justify-center rounded-sm"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6 text-yellow-600"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-              </div>
-              <h3 class="text-lg font-semibold text-gray-800 mt-2">
-                Secure Payment
-              </h3>
-              <p class="mt-1 text-gray-600 text-sm">
-                All transactions are safe and encrypted.
-              </p>
-            </div>
-
-            <!-- Card 4 -->
-            <div class="relative bg-white rounded-lg shadow p-6 pt-12">
-              <div
-                class="absolute -top-6 left-6 bg-pink-100 w-12 h-12 flex items-center justify-center rounded-sm"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6 text-pink-600"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M12 20l9-8-9-8-9 8 9 8z"
-                  />
-                </svg>
-              </div>
-              <h3 class="text-lg font-semibold text-gray-800 mt-2">
-                Quality Products
-              </h3>
-              <p class="mt-1 text-gray-600 text-sm">
-                We only offer the best products to our customers.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- why chose us section ends -->
-
-      <!-- trending section starts-->
-
-      <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 md:px-[120px]">
-          <h2 class="text-3xl font-bold text-gray-900 mb-10 text-left">
-            Trending Now
-          </h2>
-
-          <div
-            id="trending-container"
-            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
-          >
-            <div class="col-span-full text-center py-10">
-              Loading Products...
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Modal -->
-      <div
-        id="productModal"
-        class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50"
-      >
-        <div
-          class="bg-white rounded-lg shadow-lg max-w-lg w-full mx-4 md:mx-0 p-6 relative"
-        >
-          <button
-            id="modalClose"
-            class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-2xl"
-          >
-            &times;
-          </button>
-          <img
-            id="modalImage"
-            src=""
-            alt="Product"
-            class="h-64 w-full object-cover rounded"
-          />
-          <h3 id="modalTitle" class="text-xl font-bold mt-4 text-gray-800"></h3>
-          <p id="modalCategory" class="text-gray-500 mt-1 capitalize"></p>
-          <p id="modalPrice" class="text-indigo-600 font-bold mt-2"></p>
-          <div id="modalRating" class="mt-2 flex items-center space-x-1"></div>
-          <p id="modalDescription" class="mt-4 text-gray-600 text-sm"></p>
-          <div class="mt-6 flex gap-4">
-            <button
-              class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded transition"
-            >
-              Add to Cart
-            </button>
-            <button
-              class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded transition"
-            >
-              Buy Now
-            </button>
-          </div>
-        </div>
+<main>
+  <section class="relative bg-gray-900 h-[300px] md:h-[500px] flex items-center bg-cover bg-center" style="background-image: url('./Assets/banner-image.png')">
+    <div class="absolute inset-0 bg-gradient-to-r from-gray-900/90 via-gray-900/40 to-transparent"></div>
+    <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-40 relative z-10">
+      <div class="max-w-xl text-center md:text-left text-white">
+        <h1 class="text-3xl md:text-5xl font-bold mb-4 leading-tight">Best Collection For You</h1>
+        <p class="text-sm md:text-xl text-gray-200 mb-6">Discover the latest trends in fashion, electronics, and more</p>
+        <a href="all-product.html" class="inline-block bg-indigo-600 hover:bg-indigo-700 px-8 py-3 rounded-lg font-bold transition">Shop Now</a>
       </div>
+    </div>
+  </section>
 
-      <!-- trending section ends-->
-    </body>
+  <section class="py-20 bg-white">
+    <div class="mx-auto max-w-7xl px-4 md:px-40">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Why Choose Us</h2>
+        <p class="mt-2 text-gray-600">Fast, secure, and reliable shopping experience.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">        
+  <div class="relative bg-white rounded-xl shadow-sm border border-gray-100 p-6 pt-12 hover:shadow-md transition group">
+    <div class="absolute -top-6 left-6 bg-indigo-600 text-white w-12 h-12 flex items-center justify-center rounded-xl shadow-lg shadow-indigo-100 group-hover:-translate-y-1 transition-transform">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+      </svg>
+    </div>
+    <h3 class="text-lg font-bold text-gray-800">Fast Delivery</h3>
+    <p class="mt-1 text-gray-500 text-sm leading-relaxed">Get your products delivered quickly and safely to your doorstep.</p>
+  </div>
 
+  <div class="relative bg-white rounded-xl shadow-sm border border-gray-100 p-6 pt-12 hover:shadow-md transition group">
+    <div class="absolute -top-6 left-6 bg-green-500 text-white w-12 h-12 flex items-center justify-center rounded-xl shadow-lg shadow-green-100 group-hover:-translate-y-1 transition-transform">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+      </svg>
+    </div>
+    <h3 class="text-lg font-bold text-gray-800">24/7 Support</h3>
+    <p class="mt-1 text-gray-500 text-sm leading-relaxed">Our dedicated support team is available around the clock for you.</p>
+  </div>
+
+  <div class="relative bg-white rounded-xl shadow-sm border border-gray-100 p-6 pt-12 hover:shadow-md transition group">
+    <div class="absolute -top-6 left-6 bg-amber-500 text-white w-12 h-12 flex items-center justify-center rounded-xl shadow-lg shadow-amber-100 group-hover:-translate-y-1 transition-transform">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+      </svg>
+    </div>
+    <h3 class="text-lg font-bold text-gray-800">Secure Payment</h3>
+    <p class="mt-1 text-gray-500 text-sm leading-relaxed">All transactions are safe, encrypted, and 100% secure.</p>
+  </div>
+
+  <div class="relative bg-white rounded-xl shadow-sm border border-gray-100 p-6 pt-12 hover:shadow-md transition group">
+    <div class="absolute -top-6 left-6 bg-rose-500 text-white w-12 h-12 flex items-center justify-center rounded-xl shadow-lg shadow-rose-100 group-hover:-translate-y-1 transition-transform">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+      </svg>
+    </div>
+    <h3 class="text-lg font-bold text-gray-800">Quality Products</h3>
+    <p class="mt-1 text-gray-500 text-sm leading-relaxed">We curate only the highest quality products for our customers.</p>
+  </div>
+
+
+        </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 md:px-40">
+      <h2 class="text-3xl font-bold text-gray-900 mb-10">Trending Now</h2>
+      <div id="trending-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        </div>
+    </div>
+  </section>
+  <div id="productModal" class="fixed inset-0 bg-black/60 hidden items-center justify-center z-[200] p-4 backdrop-blur-sm">
+    
+    <div class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full relative p-6 md:p-10 overflow-y-auto max-h-[90vh]">
+        
+        <button id="modalClose" onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-900 text-3xl transition-colors">
+            &times;
+        </button>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-gray-50 rounded-2xl p-6 flex items-center justify-center">
+                <img id="modalImage" src="" alt="Product" class="max-h-64 object-contain" />
+            </div>
+
+            <div class="flex flex-col justify-center">
+                <span id="modalCategory" class="text-xs font-bold text-indigo-600 uppercase tracking-widest mb-2"></span>
+                
+                <h2 id="modalTitle" class="text-2xl font-bold text-gray-900 mb-2 leading-tight"></h2>
+                
+                <div id="modalRating" class="flex items-center gap-1 mb-4"></div>
+                
+                <p id="modalDescription" class="text-gray-500 text-sm mb-6 leading-relaxed"></p>
+                
+                <div class="mt-auto">
+                    <p id="modalPrice" class="text-3xl font-black text-gray-900 mb-6"></p>
+                    
+                    <div class="flex gap-4">
+                        <button id="modalAddToCart" class="flex-1 bg-indigo-600 text-white py-4 rounded-xl font-bold hover:bg-indigo-700 transition active:scale-95 flex items-center justify-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                            </svg>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</main>
     <!-- Footer section start-->
     <footer
       class="bg-[#111827] text-white pt-[80px] pb-[40px] font-['Inter',sans-serif]"
