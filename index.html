@@ -25,84 +25,90 @@
   <body class="bg-gray-100">
     <header>
       <!-- Navbar starts -->
-      <nav
-        class="bg-white shadow-md">
-        <div class="max-w-7xl mx-auto px-4 py-3 ">
-         <div class="flex items-center justify-between md:grid md:grid-cols-3 items-center">
-           
-        <!-- Logo -->
-        <div class="text-2xl font-extrabold text-indigo-600">
-          SwiftCart
-        </div>
-        <!-- Desktop Menu -->
-        <ul class="hidden md:flex space-x-8">
-          <li>
-            <a href="#" class="hover:text-indigo-600 transition duration-200"
-              >Home</a
-            >
-          </li>
-          <li>
-            <a href="#" class="hover:text-indigo-600 transition duration-200"
-              >Products</a
-            >
-          </li>
-          <li>
-            <a href="#" class="hover:text-indigo-600 transition duration-200"
-              >About</a
-            >
-          </li>
-          <li>
-            <a href="#" class="hover:text-indigo-600 transition duration-200"
-              >Contact</a
-            >
-          </li>
-        </ul>
+      <nav class="navbar bg-white border-b border-gray-100 shadow-md ">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+          <div
+            class=" md:grid md:grid-cols-3 items-center"
+          >
+            <!-- Logo -->
+            <div class="text-2xl font-extrabold text-indigo-600">SwiftCart</div>
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex space-x-8">
+              <li>
+                <a
+                  href="index.html"
+                  class="hover:text-indigo-600 transition duration-200"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="all-product.html"
+                  class="hover:text-indigo-600 transition duration-200"
+                  >Products</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-indigo-600 transition duration-200"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-indigo-600 transition duration-200"
+                  >Contact</a
+                >
+              </li>
+            </ul>
 
-        <!-- Right Side -->
-        <div class="flex justify-end items-center gap-4">
-          <!-- Cart -->
-          <div class="relative">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-7 w-7 text-indigo-600 hover:text-indigo-500 transition"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.293 2.293a1 1 0 00.707 1.707h11.172a1 1 0 00.707-1.707L17 13M7 13v6M17 13v6"
-              />
-            </svg>
-            <span
-              id="cartCount"
-              class="absolute -top-2 -right-2 bg-red-500 text-white rounded-full px-1 text-xs font-bold"
-            ></span>
-          </div>
+            <!-- Right Side -->
+            <div class="flex justify-end items-center gap-4">
+              <!-- Cart -->
+              <div class="relative">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-7 w-7 text-indigo-600 hover:text-indigo-500 transition"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.293 2.293a1 1 0 00.707 1.707h11.172a1 1 0 00.707-1.707L17 13M7 13v6M17 13v6"
+                  />
+                </svg>
+                <span
+                  id="cartCount"
+                  class="absolute -top-2 -right-2 bg-red-500 text-white rounded-full px-1 text-xs font-bold"
+                ></span>
+              </div>
 
-          <!-- Hamburger Menu (Mobile) -->
-          <div class="md:hidden">
-            <button id="menuBtn" class="focus:outline-none">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-7 w-7 text-gray-800 hover:text-indigo-600 transition"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            </button>
+              <!-- Hamburger Menu (Mobile) -->
+              <div class="md:hidden">
+                <button id="menuBtn" class="focus:outline-none">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-7 w-7 text-gray-800 hover:text-indigo-600 transition"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
           </div>
-        </div>
-         </div>
         </div>
       </nav>
 
@@ -136,99 +142,414 @@
     </header>
     <body>
       <!-- bannar/ hero section starts -->
-      <!-- HERO / BANNER SECTION -->
       <section
-        class="w-full h-[60vh] md:h-[70vh] bg-cover bg-center relative"
-        style="background-image: url('./Assets/banner-image.png')">
-        
-          <!-- Gradient Overlay -->
-        
-      <div class="absolute inset-0 bg-gradient-to-r from-black/90 to-black/10"></div>
+        class="relative bg-gray-900 h-[300px] md:h-[500px] flex items-center bg-cover bg-center "
+        style="background-image: url(&quot;./Assets/banner-image.png&quot;)"
+      >
+        <!-- Gradient Overlay -->
+
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-[#1F2937]/95 via-[#1F2937]/40 to-transparent"
+        ></div>
         <!-- Content -->
-         <div
-          class="relative max-auto max-w-7xl text-left h-full flex items-center text-left text-white px-4 md:px-8 "
+        <div
+          class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-40 py-4 relative z-10"
         >
-          <div class="flex flex-col max-w-lg">
-            <h1 class="text-3xl md:text-5xl font-bold mb-4 leading-tight whitespace-nowrap md:whitespace-normal">
-            Best Collection For You
-          </h1>
-          <p class="text-sm md:text-2xl text-gray-200 mb-6">
-            Discover the latest trends in fashion, electronics, and more
-          </p>
-          <button class="btn btn-primary px-6 py-2 text-base">Shop Now</button>
+          <div class="max-w-xl lg:max-w-3xl text-center md:text-left">
+            <h1
+              class="text-white text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight "
+            >
+              Best Collection For You
+            </h1>
+            <p class="text-sm md:text-2xl text-gray-200 mb-6">
+              Discover the latest trends in fashion, electronics, and more
+            </p>
+            <button class="btn btn-primary px-6 py-2 text-base">
+              Shop Now
+            </button>
           </div>
         </div>
       </section>
 
       <!-- bannar/ hero section ends -->
 
+      <!-- why chose us/ features section starts -->
       <section class="w-full bg-gray-50 py-16">
-  <div class="max-w-7xl mx-auto px-6 md:px-12 text-center">
-    <!-- Heading centered -->
-    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Why Choose Us</h2>
-    <p class="mt-2 text-gray-600 text-sm md:text-base">
-      Fast, secure, and reliable shopping experience for you.
-    </p>
+        <div class="container mx-auto max-w-7xl  px-6 md:px-12 text-center">
+          <!-- Heading centered -->
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-800">
+            Why Choose Us
+          </h2>
+          <p class="mt-2 text-gray-600 text-sm md:text-base">
+            Fast, secure, and reliable shopping experience for you.
+          </p>
 
-    <!-- Features grid -->
-    <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+          <!-- Features grid -->
+          <div
+            class="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8"
+          >
+            <!-- Card 1 -->
+            <div class="relative bg-white rounded-lg shadow p-6 pt-12">
+              <!-- Icon box half-over top -->
+              <div
+                class="absolute -top-6 left-6 bg-indigo-100 w-12 h-12 flex items-center justify-center rounded-sm"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 text-indigo-600"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 3h18v18H3V3z"
+                  />
+                </svg>
+              </div>
+              <!-- Text -->
+              <h3 class="text-lg font-semibold text-gray-800 mt-2">
+                Fast Delivery
+              </h3>
+              <p class="mt-1 text-gray-600 text-sm">
+                Get your products delivered quickly and safely.
+              </p>
+            </div>
 
-      <!-- Card 1 -->
-      <div class="relative bg-white rounded-lg shadow p-6 pt-12">
-        <!-- Icon box half-over top -->
-        <div class="absolute -top-6 left-6 bg-indigo-100 w-12 h-12 flex items-center justify-center rounded-sm">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18v18H3V3z"/>
-          </svg>
+            <!-- Card 2 -->
+            <div class="relative bg-white rounded-lg shadow p-6 pt-12">
+              <div
+                class="absolute -top-6 left-6 bg-green-100 w-12 h-12 flex items-center justify-center rounded-sm"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 text-green-600"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 8v4l3 3"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-lg font-semibold text-gray-800 mt-2">
+                24/7 Support
+              </h3>
+              <p class="mt-1 text-gray-600 text-sm">
+                Our team is available around the clock.
+              </p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="relative bg-white rounded-lg shadow p-6 pt-12">
+              <div
+                class="absolute -top-6 left-6 bg-yellow-100 w-12 h-12 flex items-center justify-center rounded-sm"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 text-yellow-600"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-lg font-semibold text-gray-800 mt-2">
+                Secure Payment
+              </h3>
+              <p class="mt-1 text-gray-600 text-sm">
+                All transactions are safe and encrypted.
+              </p>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="relative bg-white rounded-lg shadow p-6 pt-12">
+              <div
+                class="absolute -top-6 left-6 bg-pink-100 w-12 h-12 flex items-center justify-center rounded-sm"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 text-pink-600"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 20l9-8-9-8-9 8 9 8z"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-lg font-semibold text-gray-800 mt-2">
+                Quality Products
+              </h3>
+              <p class="mt-1 text-gray-600 text-sm">
+                We only offer the best products to our customers.
+              </p>
+            </div>
+          </div>
         </div>
-        <!-- Text -->
-        <h3 class="text-lg font-semibold text-gray-800 mt-2">Fast Delivery</h3>
-        <p class="mt-1 text-gray-600 text-sm">Get your products delivered quickly and safely.</p>
+      </section>
+      <!-- why chose us section ends -->
+
+      <!-- trending section starts-->
+      <!-- Trending Now Section (unchanged) -->
+      <section id="trending" class="w-full py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-800 text-center">
+            Trending Now
+          </h2>
+          <p class="mt-2 text-gray-600 text-sm md:text-base text-center">
+            Check out our top 3 trending products.
+          </p>
+
+          <div
+            id="productsGrid"
+            class="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
+          ></div>
+        </div>
+      </section>
+
+      <!-- Modal -->
+      <div
+        id="productModal"
+        class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50"
+      >
+        <div
+          class="bg-white rounded-lg shadow-lg max-w-lg w-full mx-4 md:mx-0 p-6 relative"
+        >
+          <button
+            id="modalClose"
+            class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-2xl"
+          >
+            &times;
+          </button>
+          <img
+            id="modalImage"
+            src=""
+            alt="Product"
+            class="h-64 w-full object-cover rounded"
+          />
+          <h3 id="modalTitle" class="text-xl font-bold mt-4 text-gray-800"></h3>
+          <p id="modalCategory" class="text-gray-500 mt-1 capitalize"></p>
+          <p id="modalPrice" class="text-indigo-600 font-bold mt-2"></p>
+          <div id="modalRating" class="mt-2 flex items-center space-x-1"></div>
+          <p id="modalDescription" class="mt-4 text-gray-600 text-sm"></p>
+          <div class="mt-6 flex gap-4">
+            <button
+              class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded transition"
+            >
+              Add to Cart
+            </button>
+            <button
+              class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded transition"
+            >
+              Buy Now
+            </button>
+          </div>
+        </div>
       </div>
 
-      <!-- Card 2 -->
-      <div class="relative bg-white rounded-lg shadow p-6 pt-12">
-        <div class="absolute -top-6 left-6 bg-green-100 w-12 h-12 flex items-center justify-center rounded-sm">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3"/>
-          </svg>
+      <script>
+        const productsGrid = document.getElementById("productsGrid");
+        const productModal = document.getElementById("productModal");
+        const modalClose = document.getElementById("modalClose");
+        const modalImage = document.getElementById("modalImage");
+        const modalTitle = document.getElementById("modalTitle");
+        const modalCategory = document.getElementById("modalCategory");
+        const modalPrice = document.getElementById("modalPrice");
+        const modalRating = document.getElementById("modalRating");
+        const modalDescription = document.getElementById("modalDescription");
+
+        // Fetch top 3 products
+        async function loadTrendingProducts() {
+          productsGrid.innerHTML = "Loading...";
+          const res = await fetch("https://fakestoreapi.com/products");
+          const products = await res.json();
+          const top3 = products.slice(0, 3);
+
+          productsGrid.innerHTML = "";
+          top3.forEach((product) => {
+            const card = document.createElement("div");
+            card.className =
+              "bg-white rounded-lg shadow flex flex-col cursor-pointer hover:shadow-lg transition";
+            card.innerHTML = `
+        <div class="h-48 w-full overflow-hidden">
+          <img src="${product.image}" alt="${product.title}" class="h-full w-full object-cover">
         </div>
-        <h3 class="text-lg font-semibold text-gray-800 mt-2">24/7 Support</h3>
-        <p class="mt-1 text-gray-600 text-sm">Our team is available around the clock.</p>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="relative bg-white rounded-lg shadow p-6 pt-12">
-        <div class="absolute -top-6 left-6 bg-yellow-100 w-12 h-12 flex items-center justify-center rounded-sm">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-          </svg>
+        <div class="p-4 flex-1 flex flex-col justify-between">
+          <div>
+            <h3 class="text-lg font-semibold text-gray-800 truncate">${product.title}</h3>
+            <p class="mt-1 text-gray-500 text-sm capitalize">${product.category}</p>
+            <p class="mt-2 text-indigo-600 font-bold">$${product.price}</p>
+            <div class="mt-2 flex items-center space-x-1">
+              ${getStars(product.rating.rate)}
+              <span class="ml-2 text-gray-500 text-sm">(${product.rating.rate.toFixed(1)})</span>
+            </div>
+          </div>
+          <button class="mt-4 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 rounded-lg transition-colors duration-300">
+            Add to Cart
+          </button>
         </div>
-        <h3 class="text-lg font-semibold text-gray-800 mt-2">Secure Payment</h3>
-        <p class="mt-1 text-gray-600 text-sm">All transactions are safe and encrypted.</p>
-      </div>
+      `;
 
-      <!-- Card 4 -->
-      <div class="relative bg-white rounded-lg shadow p-6 pt-12">
-        <div class="absolute -top-6 left-6 bg-pink-100 w-12 h-12 flex items-center justify-center rounded-sm">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-pink-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 20l9-8-9-8-9 8 9 8z"/>
-          </svg>
-        </div>
-        <h3 class="text-lg font-semibold text-gray-800 mt-2">Quality Products</h3>
-        <p class="mt-1 text-gray-600 text-sm">We only offer the best products to our customers.</p>
-      </div>
+            // Open modal on card click
+            card.addEventListener("click", () => openModal(product));
+            productsGrid.appendChild(card);
+          });
+        }
 
-    </div>
-  </div>
-</section>
+        function openModal(product) {
+          modalImage.src = product.image;
+          modalTitle.textContent = product.title;
+          modalCategory.textContent = product.category;
+          modalPrice.textContent = `$${product.price}`;
+          modalRating.innerHTML =
+            getStars(product.rating.rate) +
+            `<span class="ml-2 text-gray-500 text-sm">(${product.rating.rate.toFixed(1)})</span>`;
+          modalDescription.textContent = product.description;
+          productModal.classList.remove("hidden");
+          productModal.classList.add("flex");
+        }
 
-    
+        modalClose.addEventListener("click", () => {
+          productModal.classList.add("hidden");
+          productModal.classList.remove("flex");
+        });
 
+        // Close modal when clicking outside
+        productModal.addEventListener("click", (e) => {
+          if (e.target === productModal) {
+            productModal.classList.add("hidden");
+            productModal.classList.remove("flex");
+          }
+        });
 
+        // Helper: create stars
+        function getStars(rate) {
+          const fullStars = Math.floor(rate);
+          const halfStar = rate % 1 >= 0.5 ? 1 : 0;
+          let html = "";
+          for (let i = 0; i < fullStars; i++)
+            html += '<span class="text-yellow-400">★</span>';
+          if (halfStar) html += '<span class="text-yellow-400">★</span>';
+          for (let i = fullStars + halfStar; i < 5; i++)
+            html += '<span class="text-gray-300">★</span>';
+          return html;
+        }
+
+        // Initial load
+        loadTrendingProducts();
+      </script>
+
+      <!-- trending section ends-->
 
       <script src="script.js"></script>
     </body>
-    <footer></footer>
+
+    <!-- Footer section start-->
+    <footer class="bg-gray-800 text-white pt-12 mt-16">
+      <div
+        class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8"
+      >
+        <div>
+          <h3 class="font-bold text-lg mb-2">SwiftCart</h3>
+          <p>Your trusted online shopping platform.</p>
+        </div>
+        <div>
+          <h3 class="font-bold text-lg mb-2">Quick Links</h3>
+          <ul class="space-y-1">
+            <li>
+              <a href="index.html" class="hover:text-indigo-400 transition"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-indigo-400 transition">Products</a>
+            </li>
+            <li>
+              <a href="#about" class="hover:text-indigo-400 transition"
+                >About</a
+              >
+            </li>
+            <li>
+              <a href="#contact" class="hover:text-indigo-400 transition"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-bold text-lg mb-2">Customer Service</h3>
+          <ul class="space-y-1">
+            <li>
+              <a href="#" class="hover:text-indigo-400 transition"
+                >Help Center</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-indigo-400 transition">Returns</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-indigo-400 transition">Shipping</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-indigo-400 transition">FAQs</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-bold text-lg mb-2">Newsletter</h3>
+          <p class="text-gray-300 text-sm">Subscribe for latest updates</p>
+          <div class="flex mt-2">
+            <input
+              type="email"
+              placeholder="Email address"
+              class="w-full p-2 rounded-l-lg text-gray-800"
+            />
+            <button
+              class="bg-indigo-600 hover:bg-indigo-700 px-4 rounded-r-lg transition"
+            >
+              Subscribe
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 mt-12"></div>
+      <div
+        class="max-w-7xl mx-auto px-6 md:px-12 mt-4 flex flex-col md:flex-row items-center justify-between"
+      >
+        <p class="text-gray-400 text-sm md:text-left">
+          &copy; 2026 SwiftCart. All rights reserved.
+        </p>
+        <div class="flex space-x-4 mt-2 md:mt-0">
+          <!-- Example social icons -->
+          <a href="#" class="text-gray-400 hover:text-indigo-400 transition"
+            >FB</a
+          >
+          <a href="#" class="text-gray-400 hover:text-indigo-400 transition"
+            >TW</a
+          >
+          <a href="#" class="text-gray-400 hover:text-indigo-400 transition"
+            >IG</a
+          >
+        </div>
+      </div>
+    </footer>
+    <!-- Footer section end-->
   </body>
 </html>
