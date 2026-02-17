@@ -25,11 +25,11 @@
   <body class="bg-gray-100">
     <header>
       <!-- Navbar starts -->
-      <nav class="navbar bg-white border-b border-gray-100 shadow-md ">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-          <div
-            class=" md:grid md:grid-cols-3 items-center"
-          >
+      <nav class="navbar bg-white border-b border-gray-100 shadow-md">
+        <div
+          class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between"
+        >
+          <div class="md:grid md:grid-cols-3 items-center">
             <!-- Logo -->
             <div class="text-2xl font-extrabold text-indigo-600">SwiftCart</div>
             <!-- Desktop Menu -->
@@ -143,7 +143,7 @@
     <body>
       <!-- bannar/ hero section starts -->
       <section
-        class="relative bg-gray-900 h-[300px] md:h-[500px] flex items-center bg-cover bg-center "
+        class="relative bg-gray-900 h-[300px] md:h-[500px] flex items-center bg-cover bg-center"
         style="background-image: url(&quot;./Assets/banner-image.png&quot;)"
       >
         <!-- Gradient Overlay -->
@@ -157,7 +157,7 @@
         >
           <div class="max-w-xl lg:max-w-3xl text-center md:text-left">
             <h1
-              class="text-white text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight "
+              class="text-white text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight"
             >
               Best Collection For You
             </h1>
@@ -175,7 +175,7 @@
 
       <!-- why chose us/ features section starts -->
       <section class="w-full bg-white py-20">
-        <div class=" mx-auto max-w-7xl  px-4 md:px-40 text-center">
+        <div class="mx-auto max-w-7xl px-4 md:px-40 text-center">
           <!-- Heading centered -->
           <h2 class="text-3xl md:text-4xl font-bold text-gray-800">
             Why Choose Us
@@ -307,20 +307,21 @@
       <!-- why chose us section ends -->
 
       <!-- trending section starts-->
-      <!-- Trending Now Section (unchanged) -->
-      <section id="trending" class="w-full py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-6 md:px-12">
-          <h2 class="text-3xl md:text-4xl font-bold text-gray-800 text-center">
+
+      <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 md:px-[120px]">
+          <h2 class="text-3xl font-bold text-gray-900 mb-10 text-left">
             Trending Now
           </h2>
-          <p class="mt-2 text-gray-600 text-sm md:text-base text-center">
-            Check out our top 3 trending products.
-          </p>
 
           <div
-            id="productsGrid"
-            class="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
-          ></div>
+            id="trending-container"
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
+          >
+            <div class="col-span-full text-center py-10">
+              Loading Products...
+            </div>
+          </div>
         </div>
       </section>
 
@@ -364,192 +365,181 @@
         </div>
       </div>
 
-      <script>
-        const productsGrid = document.getElementById("productsGrid");
-        const productModal = document.getElementById("productModal");
-        const modalClose = document.getElementById("modalClose");
-        const modalImage = document.getElementById("modalImage");
-        const modalTitle = document.getElementById("modalTitle");
-        const modalCategory = document.getElementById("modalCategory");
-        const modalPrice = document.getElementById("modalPrice");
-        const modalRating = document.getElementById("modalRating");
-        const modalDescription = document.getElementById("modalDescription");
-
-        // Fetch top 3 products
-        async function loadTrendingProducts() {
-          productsGrid.innerHTML = "Loading...";
-          const res = await fetch("https://fakestoreapi.com/products");
-          const products = await res.json();
-          const top3 = products.slice(0, 3);
-
-          productsGrid.innerHTML = "";
-          top3.forEach((product) => {
-            const card = document.createElement("div");
-            card.className =
-              "bg-white rounded-lg shadow flex flex-col cursor-pointer hover:shadow-lg transition";
-            card.innerHTML = `
-        <div class="h-48 w-full overflow-hidden">
-          <img src="${product.image}" alt="${product.title}" class="h-full w-full object-cover">
-        </div>
-        <div class="p-4 flex-1 flex flex-col justify-between">
-          <div>
-            <h3 class="text-lg font-semibold text-gray-800 truncate">${product.title}</h3>
-            <p class="mt-1 text-gray-500 text-sm capitalize">${product.category}</p>
-            <p class="mt-2 text-indigo-600 font-bold">$${product.price}</p>
-            <div class="mt-2 flex items-center space-x-1">
-              ${getStars(product.rating.rate)}
-              <span class="ml-2 text-gray-500 text-sm">(${product.rating.rate.toFixed(1)})</span>
-            </div>
-          </div>
-          <button class="mt-4 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 rounded-lg transition-colors duration-300">
-            Add to Cart
-          </button>
-        </div>
-      `;
-
-            // Open modal on card click
-            card.addEventListener("click", () => openModal(product));
-            productsGrid.appendChild(card);
-          });
-        }
-
-        function openModal(product) {
-          modalImage.src = product.image;
-          modalTitle.textContent = product.title;
-          modalCategory.textContent = product.category;
-          modalPrice.textContent = `$${product.price}`;
-          modalRating.innerHTML =
-            getStars(product.rating.rate) +
-            `<span class="ml-2 text-gray-500 text-sm">(${product.rating.rate.toFixed(1)})</span>`;
-          modalDescription.textContent = product.description;
-          productModal.classList.remove("hidden");
-          productModal.classList.add("flex");
-        }
-
-        modalClose.addEventListener("click", () => {
-          productModal.classList.add("hidden");
-          productModal.classList.remove("flex");
-        });
-
-        // Close modal when clicking outside
-        productModal.addEventListener("click", (e) => {
-          if (e.target === productModal) {
-            productModal.classList.add("hidden");
-            productModal.classList.remove("flex");
-          }
-        });
-
-        // Helper: create stars
-        function getStars(rate) {
-          const fullStars = Math.floor(rate);
-          const halfStar = rate % 1 >= 0.5 ? 1 : 0;
-          let html = "";
-          for (let i = 0; i < fullStars; i++)
-            html += '<span class="text-yellow-400">★</span>';
-          if (halfStar) html += '<span class="text-yellow-400">★</span>';
-          for (let i = fullStars + halfStar; i < 5; i++)
-            html += '<span class="text-gray-300">★</span>';
-          return html;
-        }
-
-        // Initial load
-        loadTrendingProducts();
-      </script>
-
       <!-- trending section ends-->
-
-      <script src="script.js"></script>
     </body>
 
     <!-- Footer section start-->
-    <footer class="bg-gray-800 text-white pt-12 mt-16">
-      <div
-        class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8"
-      >
-        <div>
-          <h3 class="font-bold text-lg mb-2">SwiftCart</h3>
-          <p>Your trusted online shopping platform.</p>
-        </div>
-        <div>
-          <h3 class="font-bold text-lg mb-2">Quick Links</h3>
-          <ul class="space-y-1">
-            <li>
-              <a href="index.html" class="hover:text-indigo-400 transition"
-                >Home</a
-              >
-            </li>
-            <li>
-              <a href="#" class="hover:text-indigo-400 transition">Products</a>
-            </li>
-            <li>
-              <a href="#about" class="hover:text-indigo-400 transition"
-                >About</a
-              >
-            </li>
-            <li>
-              <a href="#contact" class="hover:text-indigo-400 transition"
-                >Contact</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="font-bold text-lg mb-2">Customer Service</h3>
-          <ul class="space-y-1">
-            <li>
-              <a href="#" class="hover:text-indigo-400 transition"
-                >Help Center</a
-              >
-            </li>
-            <li>
-              <a href="#" class="hover:text-indigo-400 transition">Returns</a>
-            </li>
-            <li>
-              <a href="#" class="hover:text-indigo-400 transition">Shipping</a>
-            </li>
-            <li>
-              <a href="#" class="hover:text-indigo-400 transition">FAQs</a>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="font-bold text-lg mb-2">Newsletter</h3>
-          <p class="text-gray-300 text-sm">Subscribe for latest updates</p>
-          <div class="flex mt-2">
-            <input
-              type="email"
-              placeholder="Email address"
-              class="w-full p-2 rounded-l-lg text-gray-800"
-            />
-            <button
-              class="bg-indigo-600 hover:bg-indigo-700 px-4 rounded-r-lg transition"
+    <footer
+      class="bg-[#111827] text-white pt-[80px] pb-[40px] font-['Inter',sans-serif]"
+    >
+      <div class="max-w-7xl mx-auto px-4 md:px-[120px]">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-[60px]">
+          <div class="md:col-span-4">
+            <h2
+              class="text-[#6366F1] text-[24px] font-bold tracking-tight mb-6"
             >
-              Subscribe
-            </button>
+              SwiftCart
+            </h2>
+            <p class="text-[#9CA3AF] text-[16px] leading-[24px] max-w-[300px]">
+              Your one-stop shop for all your fashion and lifestyle needs.
+              Quality products, fast delivery, and excellent support.
+            </p>
+          </div>
+
+          <div class="md:col-span-2">
+            <h3
+              class="text-white text-[14px] font-semibold uppercase tracking-[0.15em] mb-7"
+            >
+              Quick Links
+            </h3>
+            <ul class="space-y-4">
+              <li>
+                <a
+                  href="#"
+                  class="text-[#9CA3AF] text-[15px] hover:text-white transition-colors"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-[#9CA3AF] text-[15px] hover:text-white transition-colors"
+                  >Products</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-[#9CA3AF] text-[15px] hover:text-white transition-colors"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-[#9CA3AF] text-[15px] hover:text-white transition-colors"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="md:col-span-2">
+            <h3
+              class="text-white text-[14px] font-semibold uppercase tracking-[0.15em] mb-7"
+            >
+              Support
+            </h3>
+            <ul class="space-y-4">
+              <li>
+                <a
+                  href="#"
+                  class="text-[#9CA3AF] text-[15px] hover:text-white transition-colors"
+                  >FAQ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-[#9CA3AF] text-[15px] hover:text-white transition-colors"
+                  >Shipping</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-[#9CA3AF] text-[15px] hover:text-white transition-colors"
+                  >Returns</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-[#9CA3AF] text-[15px] hover:text-white transition-colors"
+                  >Privacy Policy</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="md:col-span-4">
+            <h3
+              class="text-white text-[14px] font-bold uppercase tracking-[0.2em] mb-7"
+            >
+              Subscribe to our newsletter
+            </h3>
+            <p class="text-[#9CA3AF] text-[15px] leading-relaxed mb-6">
+              The latest news, articles, and resources, sent to your inbox
+              weekly.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-3">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                class="flex-grow bg-white text-[#111827] px-4 py-[12px] text-[14px] rounded-[6px] outline-none border border-transparent focus:border-[#4F46E5] transition-all placeholder:text-[#9CA3AF]"
+              />
+              <button
+                class="bg-[#4F46E5] hover:bg-[#4338CA] text-white px-7 py-[12px] text-[14px] font-bold rounded-[6px] shadow-sm transition-all active:scale-95 whitespace-nowrap"
+              >
+                Subscribe
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="border-t border-gray-700 mt-12"></div>
-      <div
-        class="max-w-7xl mx-auto px-6 md:px-12 mt-4 flex flex-col md:flex-row items-center justify-between"
-      >
-        <p class="text-gray-400 text-sm md:text-left">
-          &copy; 2026 SwiftCart. All rights reserved.
-        </p>
-        <div class="flex space-x-4 mt-2 md:mt-0">
-          <!-- Example social icons -->
-          <a href="#" class="text-gray-400 hover:text-indigo-400 transition"
-            >FB</a
-          >
-          <a href="#" class="text-gray-400 hover:text-indigo-400 transition"
-            >TW</a
-          >
-          <a href="#" class="text-gray-400 hover:text-indigo-400 transition"
-            >IG</a
-          >
+
+        <div class="h-[1px] bg-[#1F2937] w-full mb-8"></div>
+
+        <div
+          class="flex flex-col md:flex-row justify-between items-center gap-6"
+        >
+          <p class="text-[#6B7280] text-[14px]">
+            © 2025 SwiftCart, Inc. All rights reserved.
+          </p>
+
+          <div class="flex items-center gap-6 text-[#6B7280]">
+            <a href="#" class="hover:text-white transition-colors"
+              ><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"
+                /></svg
+            ></a>
+            <a href="#" class="hover:text-white transition-colors"
+              ><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.48.75 2.78 1.89 3.54-.7-.02-1.36-.22-1.94-.54v.05c0 2.06 1.47 3.78 3.42 4.17-.36.1-.73.15-1.12.15-.27 0-.54-.03-.8-.08.54 1.68 2.1 2.91 3.96 2.94-1.45 1.14-3.28 1.82-5.27 1.82-.34 0-.68-.02-1.02-.06 1.88 1.21 4.11 1.92 6.51 1.92 7.81 0 12.08-6.47 12.08-12.08 0-.18 0-.37-.01-.55.84-.6 1.56-1.35 2.14-2.21z"
+                /></svg
+            ></a>
+            <a href="#" class="hover:text-white transition-colors"
+              ><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 2.16c3.2 0 3.58 0 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s0 3.58-.07 4.85c-.15 3.23-1.67 4.77-4.92 4.92-1.27.06-1.65.07-4.85.07s-3.58 0-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.65-.07-4.85s0-3.58.07-4.85C2.31 3.93 3.83 2.31 7.15 2.16c1.27-.06 1.65-.07 4.85-.07m0-2c-3.26 0-3.67 0-4.95.07A7.14 7.14 0 002.13 4.92c-.06 1.28-.07 1.69-.07 5s0 3.67.07 4.95a7.14 7.14 0 004.85 4.85c1.28.06 1.69.07 5 .07s3.67 0 4.95-.07a7.14 7.14 0 004.85-4.85c.06-1.28.07-1.69.07-5s0-3.67-.07-4.95a7.14 7.14 0 00-4.85-4.85c-1.28-.06-1.69-.07-5-.07zM12 5.84A6.16 6.16 0 1018.16 12 6.16 6.16 0 0012 5.84zM12 16a4 4 0 114-4 4 4 0 01-4 4zM18.41 5.59a1.44 1.44 0 11-1.44-1.44 1.44 1.44 0 011.44 1.44z"
+                /></svg
+            ></a>
+            <a href="#" class="hover:text-white transition-colors"
+              ><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14m-.5 15.5v-5.3a3.26 3.26 0 00-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 011.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 001.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 00-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"
+                /></svg
+            ></a>
+            <a href="#" class="hover:text-white transition-colors"
+              ><svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                /></svg
+            ></a>
+          </div>
         </div>
       </div>
     </footer>
     <!-- Footer section end-->
+    <script src="script.js"></script>
   </body>
 </html>
