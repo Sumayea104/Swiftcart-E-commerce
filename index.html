@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="./styles/styles.css" />
 
     <!-- Google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -26,14 +26,16 @@
     <header>
       <!-- Navbar starts -->
       <nav
-        class="bg-white shadow-md px-6 py-4 flex items-center justify-between"
-      >
+        class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 py-3 ">
+         <div class="flex items-center justify-between md:grid md:grid-cols-3 items-center">
+           
         <!-- Logo -->
-        <div class="text-3xl font-extrabold text-indigo-600 tracking-wide">
+        <div class="text-2xl font-extrabold text-indigo-600">
           SwiftCart
         </div>
         <!-- Desktop Menu -->
-        <ul class="hidden md:flex space-x-12 text-gray-700 font-medium text-lg">
+        <ul class="hidden md:flex space-x-8">
           <li>
             <a href="#" class="hover:text-indigo-600 transition duration-200"
               >Home</a
@@ -57,7 +59,7 @@
         </ul>
 
         <!-- Right Side -->
-        <div class="flex items-center space-x-4">
+        <div class="flex justify-end items-center gap-4">
           <!-- Cart -->
           <div class="relative">
             <svg
@@ -77,8 +79,7 @@
             <span
               id="cartCount"
               class="absolute -top-2 -right-2 bg-red-500 text-white rounded-full px-1 text-xs font-bold"
-              ></span
-            >
+            ></span>
           </div>
 
           <!-- Hamburger Menu (Mobile) -->
@@ -100,6 +101,8 @@
               </svg>
             </button>
           </div>
+        </div>
+         </div>
         </div>
       </nav>
 
@@ -132,7 +135,98 @@
       <!-- Navbar ends -->
     </header>
     <body>
+      <!-- bannar/ hero section starts -->
+      <!-- HERO / BANNER SECTION -->
+      <section
+        class="w-full h-[60vh] md:h-[70vh] bg-cover bg-center relative"
+        style="background-image: url('./Assets/banner-image.png')">
         
+          <!-- Gradient Overlay -->
+        
+      <div class="absolute inset-0 bg-gradient-to-r from-black/90 to-black/10"></div>
+        <!-- Content -->
+         <div
+          class="relative max-auto max-w-7xl text-left h-full flex items-center text-left text-white px-4 md:px-8 "
+        >
+          <div class="flex flex-col max-w-lg">
+            <h1 class="text-3xl md:text-5xl font-bold mb-4 leading-tight whitespace-nowrap md:whitespace-normal">
+            Best Collection For You
+          </h1>
+          <p class="text-sm md:text-2xl text-gray-200 mb-6">
+            Discover the latest trends in fashion, electronics, and more
+          </p>
+          <button class="btn btn-primary px-6 py-2 text-base">Shop Now</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- bannar/ hero section ends -->
+
+      <section class="w-full bg-gray-50 py-16">
+  <div class="max-w-7xl mx-auto px-6 md:px-12 text-center">
+    <!-- Heading centered -->
+    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Why Choose Us</h2>
+    <p class="mt-2 text-gray-600 text-sm md:text-base">
+      Fast, secure, and reliable shopping experience for you.
+    </p>
+
+    <!-- Features grid -->
+    <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+
+      <!-- Card 1 -->
+      <div class="relative bg-white rounded-lg shadow p-6 pt-12">
+        <!-- Icon box half-over top -->
+        <div class="absolute -top-6 left-6 bg-indigo-100 w-12 h-12 flex items-center justify-center rounded-sm">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18v18H3V3z"/>
+          </svg>
+        </div>
+        <!-- Text -->
+        <h3 class="text-lg font-semibold text-gray-800 mt-2">Fast Delivery</h3>
+        <p class="mt-1 text-gray-600 text-sm">Get your products delivered quickly and safely.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="relative bg-white rounded-lg shadow p-6 pt-12">
+        <div class="absolute -top-6 left-6 bg-green-100 w-12 h-12 flex items-center justify-center rounded-sm">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-800 mt-2">24/7 Support</h3>
+        <p class="mt-1 text-gray-600 text-sm">Our team is available around the clock.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="relative bg-white rounded-lg shadow p-6 pt-12">
+        <div class="absolute -top-6 left-6 bg-yellow-100 w-12 h-12 flex items-center justify-center rounded-sm">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-800 mt-2">Secure Payment</h3>
+        <p class="mt-1 text-gray-600 text-sm">All transactions are safe and encrypted.</p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="relative bg-white rounded-lg shadow p-6 pt-12">
+        <div class="absolute -top-6 left-6 bg-pink-100 w-12 h-12 flex items-center justify-center rounded-sm">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-pink-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 20l9-8-9-8-9 8 9 8z"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-800 mt-2">Quality Products</h3>
+        <p class="mt-1 text-gray-600 text-sm">We only offer the best products to our customers.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    
+
+
+
       <script src="script.js"></script>
     </body>
     <footer></footer>
