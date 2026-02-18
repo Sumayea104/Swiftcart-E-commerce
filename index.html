@@ -59,8 +59,9 @@
     </ul>
   </div>
 </nav>
-
+<!-- navbar ends -->
 <main>
+  <!-- banner section starts -->
   <section class="relative bg-gray-900 h-[300px] md:h-[500px] flex items-center bg-cover bg-center" style="background-image: url('./Assets/banner-image.png')">
     <div class="absolute inset-0 bg-gradient-to-r from-gray-900/90 via-gray-900/40 to-transparent"></div>
     <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-40 relative z-10">
@@ -71,7 +72,8 @@
       </div>
     </div>
   </section>
-
+  <!-- banner section ends -->
+   <!-- hero section -->
   <section class="py-20 bg-white">
     <div class="mx-auto max-w-7xl px-4 md:px-40">
       <div class="text-center mb-12">
@@ -118,24 +120,32 @@
     <h3 class="text-lg font-bold text-gray-800">Quality Products</h3>
     <p class="mt-1 text-gray-500 text-sm leading-relaxed">We curate only the highest quality products for our customers.</p>
   </div>
-
-
-        </div>
+      </div>
     </div>
   </section>
-
+  <!-- hero section ends -->
+  <!-- trending now section -->
   <section class="py-20 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 md:px-40">
       <h2 class="text-3xl font-bold text-gray-900 mb-10">Trending Now</h2>
-      <div id="trending-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        </div>
+
+      <div id="category-filters" class="flex flex-wrap gap-3 mb-10 justify-center">
+    <button onclick="filterByCategory('all', this)" class="filter-btn px-6 py-2 rounded-full bg-indigo-600 text-white text-xs font-bold hover:bg-indigo-50 transition shadow-sm">All</button>
+    <button onclick="filterByCategory('electronics', this)" class="filter-btn px-6 py-2 rounded-full bg-white border border-gray-100 text-gray-600 text-xs font-bold hover:bg-indigo-50 transition shadow-sm">Electronics</button>
+    <button onclick="filterByCategory('jewelery', this)" class="filter-btn px-6 py-2 rounded-full bg-white border border-gray-100 text-gray-600 text-xs font-bold hover:bg-indigo-50 transition shadow-sm">Jewelery</button>
+    
+    <button onclick='filterByCategory("men&#39;s clothing", this)' class="filter-btn px-6 py-2 rounded-full bg-white border border-gray-100 text-gray-600 text-xs font-bold hover:bg-indigo-50 transition shadow-sm">Men's Wear</button>
+    <button onclick='filterByCategory("women&#39;s clothing", this)' class="filter-btn px-4 py-2 rounded-full bg-white border border-gray-100 text-gray-600 text-xs font-bold hover:bg-indigo-50 transition shadow-sm">Women's Wear</button>
+</div>
+
+      <div id="trending-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"></div>
     </div>
   </section>
   <div id="productModal" class="fixed inset-0 bg-black/60 hidden items-center justify-center z-[200] p-4 backdrop-blur-sm">
     
     <div class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full relative p-6 md:p-10 overflow-y-auto max-h-[90vh]">
         
-        <button id="modalClose" onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-900 text-3xl transition-colors">
+        <button id="modalClose" onclick="closeModal()" class="filter-btn absolute top-4 right-4 text-gray-400 hover:text-gray-900 text-3xl transition-colors">
             &times;
         </button>
 
@@ -157,7 +167,7 @@
                     <p id="modalPrice" class="text-3xl font-black text-gray-900 mb-6"></p>
                     
                     <div class="flex gap-4">
-                        <button id="modalAddToCart" class="flex-1 bg-indigo-600 text-white py-4 rounded-xl font-bold hover:bg-indigo-700 transition active:scale-95 flex items-center justify-center gap-2">
+                        <button id="modalAddToCart" class="filter-btn flex-1 bg-indigo-600 text-white py-4 rounded-xl font-bold hover:bg-indigo-700 transition active:scale-95 flex items-center justify-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                             </svg>
@@ -174,7 +184,7 @@
         
         <div class="p-4 border-b flex items-center justify-between bg-indigo-600 text-white">
             <h2 class="font-bold text-lg">My Cart</h2>
-            <button onclick="toggleCart(false)" class="text-3xl font-bold text-white">&times;</button>
+            <button onclick="toggleCart(false)" class="filter-btn text-3xl font-bold text-white">&times;</button>
         </div>
 
         <div id="cartItemsList" class="flex-grow overflow-y-auto p-4 space-y-4">

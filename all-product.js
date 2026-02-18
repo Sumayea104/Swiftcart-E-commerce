@@ -18,8 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
  */
 function syncCart() {
     localStorage.setItem('swiftCart', JSON.stringify(cart));
-    updateBadge(); // Updates the Navbar number
-    if (typeof renderCartUI === 'function') renderCartUI(); // Updates Sidebar
+    updateBadge(); 
+    if (typeof renderCartUI === 'function') renderCartUI(); 
 }
 
 
@@ -56,10 +56,11 @@ function renderProducts(items) {
             </div>
             <div class="flex justify-between items-center mb-2">
                 <span class="text-[10px] font-bold uppercase text-indigo-600 bg-indigo-50 px-2 py-1 rounded">${p.category}</span>
-                <span class="text-xs font-bold text-gray-700">★ ${p.rating.rate}</span>
+                <span class="text-yellow-400 text-sm font-bold">★ ${p.rating.rate}</span>
             </div>
             <h3 class="text-sm font-bold text-gray-900 line-clamp-2 h-10 mb-2">${p.title}</h3>
             <p class="text-lg font-black text-gray-900 mb-4">$${p.price.toFixed(2)}</p>
+            
             <div class="flex gap-2 mt-auto">
                 <button onclick="openProductModal(${p.id})" class="flex-1 py-2 text-xs font-bold border border-gray-200 rounded-lg hover:bg-gray-50 transition">Details</button>
                 <button onclick="addToCart(${p.id}, '${p.title.replace(/'/g, "\\'")}', ${p.price}, '${p.image}')" class="flex-1 py-2 text-xs font-bold bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">Add</button>
@@ -67,7 +68,24 @@ function renderProducts(items) {
         </div>
     `).join('');
 }
+function filterByCategory(category, btn) {
+    
+    document.querySelectorAll('.filter-btn').forEach(b => {
+        b.classList.remove('bg-indigo-600', 'text-white', 'shadow-md');
+        b.classList.add('bg-white', 'text-gray-600');
+    });
 
+    
+    btn.classList.add('bg-indigo-600', 'text-white', 'shadow-md');
+    btn.classList.remove('bg-white', 'text-gray-600');
+
+    
+    const filtered = category === 'all' 
+        ? allProducts 
+        : allProducts.filter(p => p.category === category);
+    
+    renderProducts(filtered);
+}
 /**
  * Filter & Search
  */
@@ -105,6 +123,7 @@ async function openProductModal(id) {
             <div class="bg-gray-50 p-6 rounded-2xl flex items-center justify-center"><img src="${p.image}" class="max-h-64 object-contain"></div>
             <div>
                 <h2 class="text-2xl font-bold mb-4">${p.title}</h2>
+                <span class="text-yellow-400 text-sm font-bold">★ ${p.rating.rate}</span>
                 <p class="text-gray-500 text-sm mb-6">${p.description}</p>
                 <p class="text-2xl font-black mb-6">$${p.price}</p>
                 <button onclick="addToCart(${p.id},'${p.title.replace(/'/g,"\\'")}',${p.price},'${p.image}')" class="w-full bg-indigo-600 text-white py-4 rounded-xl font-bold">Add to Cart</button>
