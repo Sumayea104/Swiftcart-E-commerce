@@ -31,6 +31,8 @@ A sophisticated, responsive e-commerce front-end built with a focus on modular J
 ├── all-product.html     # Full catalog view
 ├── all-product.js       # Catalog filtering and search logic
 └── script.js            # Main cart logic and navigation
+
+
 # 📜 JavaScript Concepts Q&A
 
 এই ফাইলটিতে জাভাস্ক্রিপ্টের ৫টি গুরুত্বপূর্ণ বিষয়ের সহজ ব্যাখ্যা দেওয়া হয়েছে।
