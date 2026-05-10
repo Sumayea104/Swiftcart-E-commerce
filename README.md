@@ -31,7 +31,7 @@ A sophisticated, responsive e-commerce front-end built with a focus on modular J
 ├── all-product.html     # Full catalog view
 ├── all-product.js       # Catalog filtering and search logic
 └── script.js            # Main cart logic and navigation
-
+```
 
 # 📜 JavaScript Concepts Q&A
 
